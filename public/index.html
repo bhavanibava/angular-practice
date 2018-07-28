@@ -1,0 +1,50 @@
+<html ng-app="taskList">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Task Angular</title>
+	<link rel="stylesheet" href="./lib/bootstrap.min.css">
+	<link rel="stylesheet" href="./lib/font-awesome.min.css">
+	<style>
+		#task-list 	{ margin-bottom:20px; }
+		#task-form 	{ margin-bottom:20px; }
+	</style>
+	<script src="./lib/angular.min.js"></script>
+	<script src="js/controller/task_controller.js"></script> 
+	<script src="js/service/task_services.js"></script> 
+	<script src="js/inclusions.js"></script> 
+</head>
+<body ng-controller="mainController">
+	<div class="container">
+		<div class="jumbotron text-center">
+			<h1>My Task ({{ task.length }})</h1>
+		</div>
+		<div id="task-list" class="row">
+			<div class="col-sm-4 col-sm-offset-4 text-center">
+				<div class="checkbox" ng-repeat="task in tasks">
+					<label>
+						<input type="checkbox" ng-click="deletetask(task._id)"> {{ task.text }}
+					</label>
+				</div>
+				<p class="text-center" ng-show="loading">
+					<span class="fa fa-spinner fa-spin fa-3x"></span>
+				</p>
+			</div>
+		</div>
+		<div id="task-form" class="col-sm-4 col-sm-offset-4">
+			<div class="container">
+				<form>
+					<div class="form-group text-center">
+						<input class="form-control text-center input-lg" type="text" placeholder="title" ng-model="formData.title"><br>
+						<input class="form-control text-center input-lg" type="text" placeholder="Description" ng-model="formData.Description"><br>
+						<input class="form-control text-center input-lg" type="text" placeholder="ownerName" ng-model="formData.ownerName"><br>
+						<input class="form-control text-center input-lg" type="email" placeholder="emailId" ng-model="formData.emailId"><br>
+						<input class="form-control text-center input-lg" type="number" placeholder="applicationId" ng-model="formData.applicationId"><br>
+						<input class="form-control text-center input-lg" type="text" placeholder="status" ng-model="formData.status"><br>
+						<button type="submit" class="btn btn-primary btn-lg" ng-click="createtask()">Add</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

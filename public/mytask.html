@@ -1,0 +1,180 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link href="./lib/bootstrap.css" rel="stylesheet">
+        <script src="./lib/bootstrap/js/jquery.min.js"></script>
+        <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+        <style>
+            body {
+                padding-top: 50px;
+            }
+        </style>
+    </head> 
+    <body>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-inner">
+        <div class="container">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar" ></span>
+                <span class="icon-bar"></span>
+            </button>    
+            <div class="brand"><img src="./lib/bootstrap/pics/logo.png" alt="logo" width="20px" height="10px"><a href="#">logo</a></div>
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li>
+                        <button type="button" class="btn btn-link" id="myBtn">Task-list</button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-link" id="myBtn-2">signup</button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn btn-link" id="myBtn-3">Login</button>
+                    </li>
+                </ul>
+            </div>
+            <label class="text-right">
+                <button type="button" class="btn btn-info" id="myBtn-4">+</button>
+            </label>
+            </div>
+        </div>
+        </div>
+        <div class="container">
+            <div class="hero-unit">
+                <h1 class="text-center">MyTask</h1>
+                <p class="text-center">please Login to get your task-list</p>
+                <div class="pagination text-center">
+                <ul>
+                    <li><a href="#">&laquo;</a></li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">&raquo;</a></li>
+                </ul>
+                </div>
+            </div>
+        </div>
+    <!-- task-list code -->
+        <div class="container">
+            <div class="modal hide fade" id="task-id" data-backdrop="false">
+            <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="text-center">Task details</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                <label class="checkbox">
+                        <input class="form-control" type="checkbox">task one<br>
+                        <input class="form-control" type="checkbox">task two<br>
+                        <input class="form-control" type="checkbox">task three<br>
+                        <input class="form-control" type="checkbox">task four<br>
+                        <input class="form-control" type="checkbox">task five<br>
+                </label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-lg"><a href="./mytask.html">save</a></button>
+                <button class="btn btn-lg" type="button" data-dismiss="modal">close</button>
+            </div>
+            </div>
+            </div>
+            </div>
+        </div>
+    <!-- signup page -->
+        <div class="container">
+            <div class="modal hide fade" id="signup-id" data-backdrop="false">
+            <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn btn-lg close" data-dismiss="modal">x</button>
+                <h3 class="text-center">signup page</h3>
+            </div>
+            <div class="modal-body">
+                <form>
+                <div class="form-group text-center"> 
+                    <input type="text" class="form-control" placeholder="First-Name"><br>
+                    <input type="text" class="form-control" placeholder="Last-Name"><br>
+                    <input type="text" class="form-control" required="Email" placeholder="EmailId"><br> 
+                    <input type="password" class="form-control" placeholder="password"><br>
+                    <button type="button" class="form-control btn btn-lg text-center"><a href="./mytask.html">submit</a></button>
+                </div>
+                </form>
+            </div> 
+            <div class="modal-footer">
+                <button type="button" class="btn btn-lg" data-dismiss="modal">close</button>
+            </div>
+            </div>
+            </div>
+            </div>
+        </div>
+    <!-- login page code -->
+    <div class="container">
+        <div class="modal hide fade" id="login-id" data-backdrop="false">
+        <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="btn btn-lg close" data-dismiss="modal">x</button>
+            <h4 class="text-center">Login Form</h4>
+        </div>
+        <div class="modal-body">
+            <form>
+            <div class="form-group text-center">
+                <input type="text" class="form-control" required="Email" placeholder="Email"><br>
+                <input type="password" class="form-control" placeholder="password"><br>
+                <label>
+                    <input type="checkbox" class="form-control">Remaind me
+                </label>
+            </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-lg"><a href="./mytask.html">Login</a></button>
+            <button class="btn btn-lg" type="button" data-dismiss="modal">close</button>
+        </div>
+        </div>    
+        </div>
+        </div>
+    </div>
+    <!-- add task function -->
+    <div class="container">
+        <div class="modal hide fade" id="add-id" data-backdrop="false">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="text-center">Add Task details</h3>
+            </div>
+            <div class="modal-body">
+                <form class="form">
+                <div class="form-group"> 
+                    <input type="text" class="form-control" placeholder="title"><br>
+                    <input type="text" class="form-control" placeholder="Description"><br>
+                </div>
+                </form>
+            </div> 
+            <div class="modal-footer">
+                <button type="button" class="btn btn-lg"><a href="./mytask.html">Add</a></button>
+                <button type="button" class="btn btn-lg" data-dismiss="modal">close</button>
+            </div>
+        </div>
+        </div>
+        </div>
+    </div>
+        <!-- script function -->
+        <script>
+            $(document).ready(function(){
+                $("#myBtn").click(function(){
+                    $("#task-id").modal();
+                });
+                $("#myBtn-2").click(function(){
+                    $("#signup-id").modal();
+                });
+                $("#myBtn-3").click(function(){
+                    $("#login-id").modal();
+                });
+                $("#myBtn-4").click(function(){
+                    $("#add-id").modal();
+                });
+            });
+        </script>
+    </body>
+</html>
